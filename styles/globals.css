@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: #0a0a0a;
+  color: #e0e0e0;
+  font-family: 'Courier New', 'Monaco', 'Menlo', monospace;
+  line-height: 1.6;
+}
+
+body {
+  background-image: 
+    linear-gradient(rgba(20, 20, 30, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 20, 30, 0.3) 1px, transparent 1px);
+  background-size: 20px 20px;
+  min-height: 100vh;
+}
+
+a {
+  color: #6b9bd1;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #8bb3e8;
+}
+

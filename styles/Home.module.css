@@ -1,0 +1,56 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.main {
+  text-align: center;
+  max-width: 600px;
+}
+
+.prompt {
+  font-size: 0.9rem;
+  color: #6b9bd1;
+  margin-bottom: 2rem;
+  font-family: 'Courier New', monospace;
+}
+
+.dollar {
+  color: #4a7ba7;
+  margin-right: 0.5rem;
+}
+
+.name {
+  font-size: 4rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: #e0e0e0;
+  letter-spacing: 0.1em;
+}
+
+.tagline {
+  font-size: 1rem;
+  color: #a0a0a0;
+  margin-bottom: 3rem;
+  font-style: italic;
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.links a {
+  color: #6b9bd1;
+  transition: color 0.2s ease;
+}
+
+.links a:hover {
+  color: #8bb3e8;
+}
+
