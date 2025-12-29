@@ -59,7 +59,7 @@ export const projects: Project[] = [
     role: 'cofounder',
     description: 'tridnio studios website.',
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-    link: 'https://github.com/ecx2f/tridnio',
+    link: 'https://tridniostudios.com',
     linkType: 'live',
     category: 'commercial'
   }
