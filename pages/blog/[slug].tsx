@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { getAllPosts, getPostBySlug, getPostSlugs } from '@/lib/posts'
 import styles from '@/styles/Post.module.css'
@@ -25,12 +26,32 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     }
   }
 
+  // Get all posts sorted by date (newest first)
+  const allPosts = await getAllPosts()
+  const currentIndex = allPosts.findIndex(p => p.slug === slug)
+  
+  const previousPost = currentIndex < allPosts.length - 1 
+    ? allPosts[currentIndex + 1] 
+    : null
+  
+  const nextPost = currentIndex > 0 
+    ? allPosts[currentIndex - 1] 
+    : null
+
   return {
     props: {
       post: {
         ...post,
         slug,
       },
+      previousPost: previousPost ? {
+        slug: previousPost.slug,
+        title: previousPost.title,
+      } : null,
+      nextPost: nextPost ? {
+        slug: nextPost.slug,
+        title: nextPost.title,
+      } : null,
     },
   }
 }
@@ -44,9 +65,17 @@ interface PostProps {
     contentHtml: string
     heroImage?: string
   }
+  previousPost: {
+    slug: string
+    title: string
+  } | null
+  nextPost: {
+    slug: string
+    title: string
+  } | null
 }
 
-export default function Post({ post }: PostProps) {
+export default function Post({ post, previousPost, nextPost }: PostProps) {
   const siteUrl = 'https://ecx2f.dev'
   const postUrl = `${siteUrl}/blog/${post.slug}`
   const title = `${post.title} • ecx2f.dev`
@@ -112,6 +141,27 @@ export default function Post({ post }: PostProps) {
             dangerouslySetInnerHTML={{ __html: post.contentHtml }}
           />
         </article>
+
+        {(previousPost || nextPost) && (
+          <nav className={styles.postNavigation}>
+            {previousPost ? (
+              <Link href={`/blog/${previousPost.slug}`} className={styles.navLink}>
+                <span className={styles.navLabel}>← previous</span>
+                <span className={styles.navTitle}>{previousPost.title}</span>
+              </Link>
+            ) : (
+              <div className={styles.navLink}></div>
+            )}
+            {nextPost ? (
+              <Link href={`/blog/${nextPost.slug}`} className={`${styles.navLink} ${styles.navLinkNext}`}>
+                <span className={styles.navLabel}>next →</span>
+                <span className={styles.navTitle}>{nextPost.title}</span>
+              </Link>
+            ) : (
+              <div className={styles.navLink}></div>
+            )}
+          </nav>
+        )}
       </main>
     </div>
     </>

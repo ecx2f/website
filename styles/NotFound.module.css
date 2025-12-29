@@ -1,0 +1,62 @@
+.container {
+  min-height: 100vh;
+  padding: 3rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  max-width: 600px;
+  text-align: center;
+}
+
+.prompt {
+  font-size: 0.95rem;
+  color: #6b9bd1;
+  margin-bottom: 1.5rem;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+.dollar {
+  color: #4a7ba7;
+  margin-right: 0.5rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #e0e0e0;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.description {
+  font-size: 1rem;
+  color: #a0a0a0;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.link {
+  color: #6b9bd1;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+.link:hover {
+  color: #8bb3e8;
+}
+
