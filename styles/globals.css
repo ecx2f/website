@@ -10,8 +10,9 @@ body {
   overflow-x: hidden;
   background-color: #0a0a0a;
   color: #e0e0e0;
-  font-family: 'Courier New', 'Monaco', 'Menlo', monospace;
+  font-family: 'JetBrains Mono', 'Courier New', 'Monaco', 'Menlo', monospace;
   line-height: 1.6;
+  cursor: crosshair;
 }
 
 body {
@@ -20,6 +21,11 @@ body {
     linear-gradient(90deg, rgba(20, 20, 30, 0.3) 1px, transparent 1px);
   background-size: 20px 20px;
   min-height: 100vh;
+}
+
+::selection {
+  background: rgba(107, 157, 209, 0.3);
+  color: #e0e0e0;
 }
 
 a {
