@@ -37,3 +37,6 @@ next-env.d.ts
 # instructions/docs (not for repo)
 instruc.md
 
+# package lock file (ignore local changes)
+package-lock.json
+
