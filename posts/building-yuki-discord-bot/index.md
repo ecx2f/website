@@ -1,6 +1,6 @@
 ---
 title: building yuki - my discord bot for loveplace
-date: 2025-01-21
+date: 2026-01-22
 ---
 
 # building yuki - my discord bot for loveplace

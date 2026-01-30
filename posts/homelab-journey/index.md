@@ -1,6 +1,6 @@
 ---
 title: from 2015 macbook to homelab server
-date: 2025-01-21
+date: 2026-01-21
 ---
 
 # from 2015 macbook to homelab server
